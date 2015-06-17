@@ -1,0 +1,83 @@
+body{
+  font-family:'Roboto',sans-serif; !important
+}
+
+
+.jumbotron{
+    background-color:#E91E63;
+    color:white;
+    margin-bottom:0;
+}
+
+.page{
+    bottom:0; 
+    position:absolute; 
+    padding-top:3em;
+    top:0;  
+    width:100%; 
+}
+
+
+.img-responsive{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.centerImage{
+  padding-left:10%;
+  padding-right:10%;
+}
+
+.content{
+  padding-left:16px;
+  padding-right:16px;
+}
+
+#bethKeelContent{
+  padding-top:16px;
+}
+
+p{
+  font-size:16px;
+}
+
+@media(min-width:1025px){
+  .content{
+    padding-left:15%;
+    padding-right:15%;
+  }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+@keyframes slideFromBottom{
+  from{
+    transform:translateY(100%);
+  }
+  
+  to{
+    transform:translateY(0);
+  }
+}
+
+@keyframes slideOutFromTop{
+  from{
+    transform:translateY(-100%);
+  }
+}
+
+.ng-enter{
+  animation:slideFromBottom 0.5s both ease-in;
+ /* z-index:8888;*/
+}
+

@@ -14,6 +14,11 @@
 			.when('/schedule',{
 			  templateUrl : 'pages/schedule.html',
 			  controller : 'scheduleController'
+			})
+			
+			.when("/programs",{
+			  templateUrl : "pages/programs.html",
+			  controller : "programsController"
 			});
 
 			
@@ -27,6 +32,10 @@
 	});
 	
 	myApp.controller('scheduleController',function($scope){
+	  $scope.pageClass="page-home";
+	});
+	
+	myApp.controller("programsController",function($scope){
 	  $scope.pageClass="page-home";
 	});
 

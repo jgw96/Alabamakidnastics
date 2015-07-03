@@ -26,6 +26,16 @@
 
 
 <body ng-controller="dashboardController">
+  
+  <!--facebook-->
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
   <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -42,7 +52,9 @@
         <li><a href="#">Home</a></li>
         <li><a href="#schedule">2015 Schedule</a></li>
         <li><a href="#programs">Programs</a></li> 
-        <li><a href="#events">Events</a></li> 
+        <li><a href="#events">Events</a></li>
+        <li><a href="#growing">Growing Gym</a></li>
+        <li><a href="#portal">Customer Portal</a></li>
       </ul>
     </div>
   </div>

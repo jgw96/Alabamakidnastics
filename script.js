@@ -19,6 +19,21 @@
 			.when("/programs",{
 			  templateUrl : "pages/programs.html",
 			  controller : "programsController"
+			})
+			
+			.when("/events",{
+			  templateUrl : "pages/events.html",
+			  controller: "eventsController"
+			})
+			
+			.when("/growing",{
+			  templateUrl: "pages/growing.html",
+			  controller: "growingController"
+			})
+			
+			.when("/portal",{
+			  templateUrl : "pages/portal.html",
+			  controller: "portalController"
 			});
 
 			
@@ -36,6 +51,18 @@
 	});
 	
 	myApp.controller("programsController",function($scope){
+	  $scope.pageClass="page-home";
+	});
+	
+	myApp.controller("eventsController",function($scope){
+	  $scope.pageClass="page-home";
+	});
+	
+	myApp.controller("growingController",function($scope){
+	  $scope.pageClass="page-home";
+	});
+	
+	myApp.controller("portalController",function($scope){
 	  $scope.pageClass="page-home";
 	});
 

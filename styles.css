@@ -1,5 +1,5 @@
 body{
-  font-family:'Roboto',sans-serif; !important
+  font-family:'Roboto',sans-serif !important; 
 }
 
 
@@ -71,6 +71,15 @@ p{
     to      { transform: translateX(0); }
 }
 
+@keyframes slideInLeft{
+  from{
+    transform:translateX(-100%);
+  }
+  to{
+    transform:translateX(0);
+  }
+}
+
 /* slide in from the bottom */
 @keyframes slideOutLeft {
     to      { transform: translateX(-100%); }
@@ -92,8 +101,38 @@ p{
   }
 }
 
-.ng-enter{
-  animation:slideFromBottom 0.5s both ease-in;
- /* z-index:8888;*/
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
 }
+
+/*.ng-enter{
+  animation:slideFromBottom 0.5s both ease-in;
+}*/
+
+/*.dashboardHeader.ng-enter{
+  animation:slideInRight 0.5s both ease-in;
+}*/
+
+.fadeIn{
+  animation-name:fadeIn;
+  animation-duration:0.5s;
+}
+
+.rightSlide{
+  animation-name:slideInRight;
+  animation-duration:0.5s;
+}
+
+.leftSlide{
+  animation-name:slideInLeft;
+  animation-duration:0.5s;
+}
+
+
+
 

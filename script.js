@@ -34,7 +34,11 @@
 			.when("/portal",{
 			  templateUrl : "pages/portal.html",
 			  controller: "portalController"
-			});
+			})
+			
+			.otherwise({
+        redirectTo: '/'
+      });
 
 			
 	});

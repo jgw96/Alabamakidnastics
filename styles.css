@@ -71,7 +71,14 @@ p{
   margin-top:25px;
 }
 
-@media(min-width:1023px){
+@media(max-width:1290px){
+  .content{
+    padding-left:20%;
+    padding-right:20%;
+  }
+}
+
+@media(max-width:1025px){
   .content{
     padding-left:15%;
     padding-right:15%;
@@ -82,7 +89,7 @@ p{
   }
 }
 
-@media(min-width:959px){
+@media(max-width:961px){
   #birthdayParties{
     margin-left:7.4em;
   }

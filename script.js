@@ -67,5 +67,30 @@
 	
 	myApp.controller("portalController",function($scope){
 	  $scope.pageClass="page-home";
+	  
+	  $scope.goFullScreen=function(){
+	    if (
+        document.fullscreenEnabled || 
+        document.webkitFullscreenEnabled || 
+        document.mozFullScreenEnabled ||
+        document.msFullscreenEnabled
+      ) {
+        
+        var table=document.querySelector("#classes");
+        
+        if (table.requestFullscreen) {
+          table.requestFullscreen();
+        } else if (table.webkitRequestFullscreen) {
+          table.webkitRequestFullscreen();
+        } else if (table.mozRequestFullScreen) {
+          table.mozRequestFullScreen();
+        } else if (table.msRequestFullscreen) {
+          table.msRequestFullscreen();
+        }
+
+        }else{
+          alert("Your browser does not support this feature, please consider changing to Google Chrome or Mozilla Firefox.");
+        }
+	  };
 	});
 

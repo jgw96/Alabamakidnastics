@@ -2,11 +2,24 @@ body{
   font-family:'Roboto',sans-serif !important; 
 }
 
+iframe{
+  width:100%;
+  height:36em;
+  border:none;
+}
 
 .jumbotron{
     background-color:#0D47A1;
     color:white;
     margin-bottom:0;
+}
+
+#fullScreenButton{
+  margin-left:8px;
+}
+
+#customerPortalLink{
+  margin-bottom:15px;
 }
 
 .page{

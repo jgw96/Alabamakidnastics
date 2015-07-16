@@ -36,10 +36,12 @@
 			  controller: "portalController"
 			})
 			
-			.otherwise({
-        redirectTo: '/'
-      });
-
+			.when("/gallery",{
+			  templateUrl : "pages/gallery.html",
+			  controller : "galleryController"
+			});
+			
+			
 			
 	});
 
@@ -92,5 +94,9 @@
           alert("Your browser does not support this feature, please consider changing to Google Chrome or Mozilla Firefox.");
         }
 	  };
+	});
+	
+	myApp.controller("galleryController",function($scope){
+	  $scope.pageClass="page-home";
 	});
 

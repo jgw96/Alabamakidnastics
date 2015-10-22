@@ -1,0 +1,19 @@
+{
+  "name": "alabamakidnastics",
+  "version": "2.0.0",
+  "description": "Website for AlabamaKidnastics",
+  "main": "/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgw96/Alabamakidnastics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgw96/Alabamakidnastics/issues"
+  },
+  "homepage": "https://github.com/jgw96/Alabamakidnastics#readme"
+}

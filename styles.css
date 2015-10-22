@@ -1,13 +1,18 @@
 body{
   font-family:'Roboto',sans-serif !important; 
+  background-color:#ECEFF1;
 }
 
 .star{
   width:70px;
-  margin-bottom:-15px;
   -webkit-animation:spin 2s ease;
   -moz-animation:spin 2s ease;
   animation:spin 2s ease;
+  margin-top:8%;
+}
+
+#drawer {
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 #mapContent{
@@ -47,9 +52,23 @@ body{
 .page{
     bottom:0; 
     position:absolute; 
-    padding-top:3em;
     top:0;  
     width:100%; 
+}
+
+.nav-item {
+  list-style: none;
+  padding: 5%;
+  font-size: 1.2em;
+}
+
+.nav-link {
+  color:black;
+}
+
+.nav-link:visited {
+  text-decoration:none;
+  color:black;
 }
 
 
@@ -72,7 +91,7 @@ body{
 .center {
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 85%;
 }
 
 #bethKeelContent{
@@ -89,15 +108,15 @@ p{
 
 @media(max-width:1290px){
   .content{
-    padding-left:20%;
-    padding-right:20%;
+    padding-left:10%;
+    padding-right:10%;
   }
 }
 
 @media(max-width:1025px){
   .content{
-    padding-left:15%;
-    padding-right:15%;
+    padding-left:11%;
+    padding-right:11%;
   }
   
   #birthdayParties{
@@ -115,6 +134,11 @@ p{
   #birthdayParties{
     width:100%;
     margin-left:0;
+  }
+  
+  .content {
+    padding-left:8%;
+    padding-right:8%;
   }
 }
 

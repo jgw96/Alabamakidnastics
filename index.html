@@ -1,85 +1,89 @@
 <!DOCTYPE html>
 
 
-<html ng-app="myApp">
+<html>
 
 <title>Alabama Kidnastics</title>
 
 <head>
-    
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <base href="/">
+
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
-  
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js"></script>
-  
-  
-  <script src="script.js"></script>
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+  <script src="node_modules/angular-new-router/dist/router.es5.min.js"></script>
+
+  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+  <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+
+
+  <script src="app.js"></script>
 </head>
 
 
-<body ng-controller="dashboardController">
-  <!--facebook-->
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<body ng-app="app" ng-controller="AppController as app">
 
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <a class="navbar-brand" href="#/">Alabama Kidnastics</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#/">Home</a></li>
-        <li><a href="#schedule">2015 Schedule</a></li>
-        <li><a href="#programs">Programs</a></li> 
-        <li><a href="#events">Birthday Parties</a></li>
-        <li><a href="#growing">Growing Gym</a></li>
-        <li><a href="#portal">Customer Portal</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <paper-drawer-panel>
+    <paper-header-panel drawer>
+      <paper-toolbar>
+        <div style="font-size:1.3em;">Menu</div>
+      </paper-toolbar>
+      <div>
+        <li class="nav-item">
+          <a class="nav-link" ng-link="home()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ng-link="programs()">Programs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ng-link="events()">Parties, KNO and Special Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ng-link="gym()">Growing Gym</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ng-link="portal()">Schedule and Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ng-link="gallery()">Gallery</a>
+        </li>
+      </div>
+    </paper-header-panel>
+    <paper-header-panel main>
+      <paper-toolbar>
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div style="font-size:1.3em;">Alabama Kidnastics</div>
+      </paper-toolbar>
+      <div>
+        <div id="main">
 
-  <div id="main">
-  
-    
-    <div class="page {{pageClass}}" ng-view></div>
-    
-  </div>
-  
-  <script>
-    if("serviceWorker" in navigator){
-      navigator.serviceWorker.register("serviceWorker.js").then(function(registration){
-        //success
-        console.log("Service worker registration succesfull with scope:", registration.scope);
-      }).catch(function(err){
-        console.log("Service worker registration failed.");
-      })
-    }
-  </script>
-  
+          <div class="page {{pageClass}}" ng-viewport></div>
+
+        </div>
+      </div>
+    </paper-header-panel>
+  </paper-drawer-panel>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="components/home/home.js"></script>
+  <script src="components/programs/programs.js"></script>
+  <script src="components/portal/portal.js"></script>
+  <script src="components/gym/gym.js"></script>
+  <script src="components/events/events.js"></script>
+
 </body>
 
 </html>
